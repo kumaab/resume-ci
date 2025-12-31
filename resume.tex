@@ -1,26 +1,157 @@
-\documentclass[10pt]{mcdowellcv}
+%% The MIT License (MIT)
+%%
+%% Copyright (c) 2015 Daniil Belyakov
+%%
+%% Permission is hereby granted, free of charge, to any person obtaining a copy
+%% of this software and associated documentation files (the "Software"), to deal
+%% in the Software without restriction, including without limitation the rights
+%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom the Software is
+%% furnished to do so, subject to the following conditions:
+%%
+%% The above copyright notice and this permission notice shall be included in all
+%% copies or substantial portions of the Software.
+%%
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%% SOFTWARE.
 
+% The font could be set to Windows-specific Calibri by using the 'calibri' option
+\documentclass[]{mcdowellcv}
+
+% For mathematical symbols
+\usepackage{amsmath}
+\usepackage[hidelinks,draft=false]{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\colorlet{accent}{blue!70!black}
+
+\hypersetup{final}
+
+\newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{\normalfont #1}\hspace{0.5em}#2\hspace{2em}}}
+
+\newcommand{\emailsymbol}{\faAt}
+\newcommand{\phonesymbol}{\faPhone}
+\newcommand{\mailsymbol}{\faEnvelope}
+\newcommand{\linkedinsymbol}{\faLinkedin}
+\newcommand{\githubsymbol}{\faGithub}
+
+\newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
+\newcommand{\phone}[1]{\printinfo{\phonesymbol}{#1}}
+\newcommand{\mailaddress}[1]{\printinfo{\mailsymbol}{#1}}
+\newcommand{\github}[1]{\printinfo{\githubsymbol}{#1}}
+\newcommand{\linkedin}[1]{\printinfo{\linkedinsymbol}{#1}}
+\newcommand\chref[3][accent]{\href{#2}{\small\color{#1}#3}}
+
+
+% Set applicant's personal data for header
 \name{Abhishek Kumar}
-\address{San Francisco, CA}
-\address{abhishek@example.com | github.com/yourhandle | linkedin.com/in/yourhandle}
+\contacts{\email{\href{mailto:kumar1@cs.stonybrook.edu}{abhishekkumar100031@gmail.com}}}
+\gitlink{\github{\href{https://github.com/abhi-2110}{github.com/abhi-2110}}}
+\address{\phone{+1-111-222-3333}
+%\mailaddress{Oakfield Lane, Philadelphia, PA-19115}
+}
+\webpage{\linkedin{\href{https://www.linkedin.com/in/kumar21}{linkedin.com/in/kumar21}}}
+%\webpage{linkedin.com/in/kumar21}
 
 \begin{document}
 
-\makeheader
+	% Print the header
+	\makeheader
 
-\section{Summary}
-Software engineer with experience in distributed systems, open-source
-development, and infrastructure tooling.
+	% Print the content
 
-\section{Experience}
-\subsection{Senior Software Engineer}
-\textit{Open Source / Infrastructure}
-\begin{itemize}
-  \item Contributor to large-scale distributed systems
-  \item Experience with CI/CD, Docker, Kubernetes
-\end{itemize}
+\begin{cvsection}{Education}
+		\begin{cvsubsection}{Stony Brook University}{Stony Brook, NY}{Aug 2019 -- Dec 2020 (Expected)}
+			\begin{itemize}
+				\item {M.S  in Computer Science \hspace{32em} GPA: 3.65/4.0}
+				\item \textbf{Coursework:} Visualisation, Distributed Systems, Analysis of Algorithms, Theory of Databases, Probability and Statistics
+			    \item \textbf{Graduate Teaching Assistant}: Analysis of Algorithms by S. Skiena (Fall '20), Principles of Database Systems (Spring '20)
+			\end{itemize}
+		\end{cvsubsection}
+		\begin{cvsubsection}{Birla Institute of Technology Mesra}{Ranchi, India}{Aug 2013 -- May 2017}
+			\begin{itemize}
+				\item {B.E in Information Technology  \hspace{30em} GPA: 8.0/10.0}
+				\item \textbf{Coursework:} Operating Systems, Data Structures, Algorithms, Data Mining, Databases, Optimization Techniques
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
 
-\section{Education}
-Bachelor of Technology in Computer Science
+	\begin{cvsection}{Technical Skills}
+		\begin{cvsubsection}{}{}{}
+			\begin{itemize}
+				\item \textbf{Languages: } Python(proficient), Java(proficient), Javascript(familiar), SQL(familiar), Go(familiar)
+				\item \textbf{Frameworks: } Git, GitHub, Maven, Tableau, D3, Flask, IntelliJ, Jupyter
+			\end{itemize}
+		\end{cvsubsection}
+    \end{cvsection}
 
+	\begin{cvsection}{Work Experience}
+		\begin{cvsubsection}{Software Engineering Intern}{Cloudera, Santa Clara}{June 2020 – Aug 2020}
+			%iChat AV
+			\begin{itemize}
+            \item Contributed to the open source github project \chref{https://github.com/apache/ranger}{Apache Ranger} - a framework to enable, monitor and manage comprehensive data security across the Hadoop platform.
+            \item Built ranger client libraries in Java and Python for RESTful web services enabling applications to manage ranger policies.
+			\end{itemize}
+		\end{cvsubsection}
+
+		\begin{cvsubsection}{Analyst}{Goldman Sachs, Bengaluru}{June 2017 - July 2019}
+			\begin{itemize}
+            	\item Streamlined the CI/CD pipeline for microservices architecture through extensive use of Bamboo plans.
+				\item Optimized performance of a legacy distributed system \chref{https://www.google.com/patents/US20130275612}{Gigabus}, increasing the throughput by 40\%.
+                \item Developed materialized views for read queries on SAP IQ, the slowest performing views went from 25 mins to 5 mins.
+                \item Migrated internal proprietary code base onto v16 Sybase IQ clusters which resulted in a 15\% gain on read SQL queries.
+                \item Built an archival and restoration store leveraging Amazon S3.
+			\end{itemize}
+		\end{cvsubsection}
+        \begin{cvsubsection}{Summer Intern}{Goldman Sachs, Bengaluru}{May 2016 - July 2016}
+            \begin{itemize}
+                \item Built and deployed workbooks in Tableau to extract market risk insights, detect anomalies and report the numbers.
+                \item Extended the functionality to web based data sources.
+            \end{itemize}
+        \end{cvsubsection}
+	\end{cvsection}
+
+	\begin{cvsection}{Academic Projects}
+	    \begin{cvsubsection}{}{}{}
+		\begin{itemize}
+			\item \textbf{COVID-19 Dashboard for US | \textit{Visualisation, D3 and Flask}}: Built an interactive web-based dashboard using D3 and Flask by processing publicly available covid-19 datasets, performing statistical analysis and finally rendering effective visualisations using choropleth map, radar chart, time series line charts, etc. \chref{https://github.com/abhi-2110/cse564-project}{[Source Code]} (Apr'20)
+			\item \textbf{COVID-19 Mobility Trend Analysis | \textit{Statistical Modeling, Python}}: Developed Jupyter notebooks to extract crucial insights from mobility trends affected due to the pandemic in parts of Canada modeled on publicly available datasets comprising of confirmed and presumptive coronavirus cases. (May'20)
+		    \item  \textbf{Fault-tolerant Key/Value Service with Raft | \textit{Distributed Systems, Go}}: Implemented the raft (a replicated state machine protocol) consensus algorithm in Golang from scratch. Built a fault-tolerant key-value service on top of raft. (Nov'19)
+			\item \textbf{Inverted Index generation using MapReduce | \textit{Distributed Systems, Go}}: Implemented a distributed MapReduce in Golang (based on the original \chref{http://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf}{\textit{research paper}}) to generate inverted indices for document searching.
+			\chref{https://github.com/abhi-2110/MapReduce}{[Source Code]} (Sept'19)
+			\item \textbf{Deceptive Opinion Spam | \textit{NLP, Python}}: Implemented one of the models presented in the  \chref{https://www.aclweb.org/anthology/P11-1032.pdf}{\textit{research paper}} (Finding Deceptive Opinion Spam by Any Stretch of the Imagination) published in ACL. The model has been trained using SVMs as classifier and achieves an accuracy of 87.8\%. (Apr'20)
+		\end{itemize}
+		\end{cvsubsection}
+% 		\begin{cvsubsection}{Personal Projects}{}{}
+% 			\begin{itemize}
+% 				\item  \textbf{E-Store:} Developed a simplified online store application using the MEAN stack which utilized various RESTful APIs like Facebook for login and Stripe for credit card payments. It also supported multiple currencies via the Open Exchange Rates API.
+% 			\end{itemize}
+% 		\end{cvsubsection}
+	\end{cvsection}
+
+	\begin{cvsection}{Academic Experience and Activities}
+		\begin{cvsubsection}{}{}{}
+			\begin{itemize}
+				% \begin{itemize}
+    %                 \item Conducted weekly office hours to help answer questions and clarify concepts.
+    %                 \item Evaluated and graded assignments and exams throughout the semester.
+				% \end{itemize}
+				\item \textbf{Invited to participate in the Google foobar challenge}
+				\item \textbf{Achieved a spot in the top 10 teams out of 100+ teams part of CSE 564 for building an effective interactive dashboard}
+				\item \textbf{Graduate Aptitude Test in Engineering (GATE-2017)}
+			    \begin{itemize}
+			        \item Achieved a percentile of 99.3, an examination conducted jointly by IISc and IITs across India.
+			    \end{itemize}
+			    \item \textbf{Solved over 450 algorithmic problems on online judges}
+			    \begin{itemize}
+			        \item SPOJ(id: \textit{abhi\_2110}), leetcode(id: \textit{abhi\_2110})
+			    \end{itemize}
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
 \end{document}

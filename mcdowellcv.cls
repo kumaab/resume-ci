@@ -1,43 +1,227 @@
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mcdowellcv}
+%% The MIT License (MIT)
+%%
+%% Copyright (c) 2015 Daniil Belyakov
+%%
+%% Permission is hereby granted, free of charge, to any person obtaining a copy
+%% of this software and associated documentation files (the "Software"), to deal
+%% in the Software without restriction, including without limitation the rights
+%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom the Software is
+%% furnished to do so, subject to the following conditions:
+%%
+%% The above copyright notice and this permission notice shall be included in all
+%% copies or substantial portions of the Software.
+%%
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%% SOFTWARE.
+\ProvidesClass{mcdowellcv}[2015/12/15 v1.1.0 McDowell CV class]
 
-\LoadClass[10pt]{article}
+% Set up the fonts according to options
+\def\mainfontsize{10pt}
+\def\mainfontface{Times New Roman}
 
-\RequirePackage{fontspec}
-\RequirePackage{geometry}
-\RequirePackage{enumitem}
-\RequirePackage{xcolor}
-
-\geometry{
-  left=1in,
-  right=1in,
-  top=1in,
-  bottom=1in
+\DeclareOption{calibri}{%
+  \def\mainfontface{Calibri}
 }
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+\ProcessOptions\relax
 
-\newcommand{\name}[1]{\def\@name{#1}}
-\newcommand{\address}[1]{\def\@address{#1}}
+% Set font size and paper type
+\LoadClass[letterpaper,\mainfontsize]{article} 
 
-\newcommand{\makeheader}{
-  {\Huge \@name \par}
-  {\small \@address \par}
-  \vspace{1em}
-  \hrule
-  \vspace{1em}
+% Set document margins
+\usepackage[left=0.75in,top=0.8in,right=0.75in,bottom=0.6in]{geometry} 
+
+
+% Set font face
+\usepackage{fontspec}
+% \setmainfont[SmallCapsFeatures={Renderer=Basic},
+% Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
+\setmainfont[SmallCapsFeatures={Renderer=Basic},
+Ligatures={TeX, NoCommon, NoDiscretionary}, BoldItalicFont=CALIBRIZ.TTF,
+    BoldFont      =CALIBRIB.TTF,
+    ItalicFont    =CALIBRII.TTF]{CALIBRI.TTF}
+
+% Remove paragraph indentation
+\usepackage[parfill]{parskip} 
+
+% Required for boldface (\bf and \bfseries) tabular columns
+\usepackage{array} 
+
+% Required for ifthenelse statements
+\usepackage{etoolbox} 
+
+% Suppress page numbers
+\pagestyle{empty} 
+
+% Flexible tables
+\usepackage{tabu}
+
+% For custom margins
+\usepackage{changepage}
+
+% To customize lists
+\usepackage{enumitem}
+
+
+% Remove left margin from lists, suppress vertical item separation and set top 
+% separation to a negative value to suppress a single parskip before lists
+\setlist{leftmargin=*, noitemsep, topsep=-1\parskip}
+
+% For spcaed small caps
+\usepackage{microtype}
+
+\DeclareMicrotypeSet*{smallcapsi} { 
+	encoding = {T1},
+	shape    = {sc*,si,scit}
 }
 
-\renewcommand{\section}[1]{
-  \vspace{1em}
-  {\large \textbf{#1}}\\
-  \hrule
+
+%--------------------------------------------------------------------------------
+%                                    Constants                                  -
+%--------------------------------------------------------------------------------
+\def\afterheaderspace{1pt}
+\def\beforesectionheaderspace{2.75pt}
+\def\sectionheadermargin{6pt}
+\def\aftersectionheaderspace{-4pt}
+\def\sectionheaderhrlueheight{0.5pt}
+\def\aftersinglelinesubsectionheaderspace{-18.5pt}
+\def\afterdoublelinesubsectionheaderspace{-10pt}
+\def\aftermultilinesubsectionheaderspace{-6pt}
+\def\afteremptysubsectionheaderspace{3pt}
+\def\subsectionmargin{9pt}
+\def\aftersubsectionspace{4pt}
+
+%--------------------------------------------------------------------------------
+%                            Header Setup and Printing                          -
+%--------------------------------------------------------------------------------
+
+% Address
+\makeatletter
+
+\newcommand\address[1]{\def\@address{#1}}
+\address{}
+
+\newcommand\printaddress{
+	\small{\@address}
 }
 
-\renewcommand{\subsection}[1]{
-  \vspace{0.5em}
-  \textbf{#1}
+% Webpage
+\makeatletter
+
+\newcommand\webpage[1]{\def\@webpage{#1}}
+\address{}
+
+\newcommand\printwebpage{
+	\small{\@webpage}
 }
 
-\setlist[itemize]{noitemsep, topsep=0pt}
+\makeatother
+
+% Name
+\makeatletter
+
+\newcommand\name[1]{\def\@name{#1}}
+\name{}
+
+\newcommand\printname{
+	\textbf{\LARGE{\textsc{\@name}}}
+}
+
+\makeatother
+
+% Contacts
+\makeatletter
+
+\newcommand\contacts[1]{\def\@contacts{#1}}
+\contacts{}
+
+\newcommand\printcontacts{
+	\small{\@contacts}
+}
+
+\makeatother
+
+% Github
+\makeatletter
+
+\newcommand\gitlink[1]{\def\@gitlink{#1}}
+\contacts{}
+
+\newcommand\printgithub{
+	\small{\@gitlink}
+}
+
+\makeatother
+
+\makeatletter
+\newcommand\makeheader{
+	\begin{center}
+	    \printname \\
+	    \medskip
+		\begin{tabu} to 1\textwidth { c|c|c|c }
+		    %\printaddress
+			\printcontacts & \printaddress & \printgithub & \printwebpage
+		\end{tabu}
+	\end{center}
+	\vspace*{\afterheaderspace}
+}
+\makeatother
+
+%--------------------------------------------------------------------------------
+%                            Sections and Subsections                           -
+%--------------------------------------------------------------------------------
+
+% Print a section header
+\makeatletter
+\newenvironment{cvsection}[1]{
+	\vspace*{\beforesectionheaderspace}
+	% Set text margins to equal \tabcolsep (6pt by default)
+	\begin{adjustwidth}{\sectionheadermargin}{\sectionheadermargin}
+		\textsc{\textbf{#1}}
+	\end{adjustwidth}
+	\smallskip
+	\hrule height \sectionheaderhrlueheight
+	\vspace*{\aftersectionheaderspace}
+}{}
+\makeatother
+
+% Print a subsection
+\makeatletter
+% Define toggles checking if titles were defined
+\newtoggle{lefttitledefined}
+\newtoggle{centertitledefined}
+\newtoggle{righttitledefined}
+
+\newenvironment{cvsubsection}[4][1]{
+	\notblank{#2}{\toggletrue{lefttitledefined}}{}
+	\notblank{#3}{\toggletrue{centertitledefined}}{}
+	\notblank{#4}{\toggletrue{righttitledefined}}{}
+	\ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
+		\begin{tabu} to 1\textwidth { X[l,p] X[c,p] X[r,p] }
+			\textbf{#2} & \textbf{#3} & \textbf{#4} \\
+		\end{tabu}
+		% Add space according to the specified number of lines
+		\ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
+			\ifnumcomp{#1}{=}{2}{\vspace*{\afterdoublelinesubsectionheaderspace}}{
+				\vspace*{\aftermultilinesubsectionheaderspace}
+			}
+		}
+	}{
+		\vspace*{\afteremptysubsectionheaderspace}
+	}
+	\togglefalse{lefttitledefined}
+	\togglefalse{centertitledefined}
+	\togglefalse{righttitledefined}
+	\begin{adjustwidth}{\subsectionmargin}{\subsectionmargin}
+}
+{
+	\end{adjustwidth}
+	\vspace*{\aftersubsectionspace}
+}
+\makeatother
