@@ -23,6 +23,7 @@
 % The font could be set to Windows-specific Calibri by using the 'calibri' option
 \documentclass[]{mcdowellcv}
 
+\usepackage{graphicx}
 % For mathematical symbols
 \usepackage{amsmath}
 \usepackage[hidelinks,draft=false]{hyperref}
@@ -50,108 +51,107 @@
 
 % Set applicant's personal data for header
 \name{Abhishek Kumar}
-\contacts{\email{\href{mailto:kumar1@cs.stonybrook.edu}{abhishekkumar100031@gmail.com}}}
-\gitlink{\github{\href{https://github.com/abhi-2110}{github.com/abhi-2110}}}
-\address{\phone{+1-111-222-3333}
-%\mailaddress{Oakfield Lane, Philadelphia, PA-19115}
+\contacts{\email{\href{mailto:abhi@apache.org}{abhi@apache.org}}}
+\gitlink{\github{\href{https://github.com/kumaab}{github.com/kumaab}}}
+\address{\phone{+1-434-995-9140}
+%\mailaddress{615 Oakfield Lane, Philadelphia, PA-19115}
 }
 \webpage{\linkedin{\href{https://www.linkedin.com/in/kumar21}{linkedin.com/in/kumar21}}}
 %\webpage{linkedin.com/in/kumar21}
 
 \begin{document}
 
-	% Print the header
-	\makeheader
+    % Print the header
+    \makeheader
 
-	% Print the content
+    % Print the content
 
-\begin{cvsection}{Education}
-		\begin{cvsubsection}{Stony Brook University}{Stony Brook, NY}{Aug 2019 -- Dec 2020 (Expected)}
-			\begin{itemize}
-				\item {M.S  in Computer Science \hspace{32em} GPA: 3.65/4.0}
-				\item \textbf{Coursework:} Visualisation, Distributed Systems, Analysis of Algorithms, Theory of Databases, Probability and Statistics
-			    \item \textbf{Graduate Teaching Assistant}: Analysis of Algorithms by S. Skiena (Fall '20), Principles of Database Systems (Spring '20)
-			\end{itemize}
-		\end{cvsubsection}
-		\begin{cvsubsection}{Birla Institute of Technology Mesra}{Ranchi, India}{Aug 2013 -- May 2017}
-			\begin{itemize}
-				\item {B.E in Information Technology  \hspace{30em} GPA: 8.0/10.0}
-				\item \textbf{Coursework:} Operating Systems, Data Structures, Algorithms, Data Mining, Databases, Optimization Techniques
-			\end{itemize}
-		\end{cvsubsection}
-	\end{cvsection}
-
-	\begin{cvsection}{Technical Skills}
-		\begin{cvsubsection}{}{}{}
-			\begin{itemize}
-				\item \textbf{Languages: } Python(proficient), Java(proficient), Javascript(familiar), SQL(familiar), Go(familiar)
-				\item \textbf{Frameworks: } Git, GitHub, Maven, Tableau, D3, Flask, IntelliJ, Jupyter
-			\end{itemize}
-		\end{cvsubsection}
-    \end{cvsection}
-
-	\begin{cvsection}{Work Experience}
-		\begin{cvsubsection}{Software Engineering Intern}{Cloudera, Santa Clara}{June 2020 – Aug 2020}
-			%iChat AV
-			\begin{itemize}
-            \item Contributed to the open source github project \chref{https://github.com/apache/ranger}{Apache Ranger} - a framework to enable, monitor and manage comprehensive data security across the Hadoop platform.
-            \item Built ranger client libraries in Java and Python for RESTful web services enabling applications to manage ranger policies.
-			\end{itemize}
-		\end{cvsubsection}
-
-		\begin{cvsubsection}{Analyst}{Goldman Sachs, Bengaluru}{June 2017 - July 2019}
-			\begin{itemize}
-            	\item Streamlined the CI/CD pipeline for microservices architecture through extensive use of Bamboo plans.
-				\item Optimized performance of a legacy distributed system \chref{https://www.google.com/patents/US20130275612}{Gigabus}, increasing the throughput by 40\%.
-                \item Developed materialized views for read queries on SAP IQ, the slowest performing views went from 25 mins to 5 mins.
-                \item Migrated internal proprietary code base onto v16 Sybase IQ clusters which resulted in a 15\% gain on read SQL queries.
-                \item Built an archival and restoration store leveraging Amazon S3.
-			\end{itemize}
-		\end{cvsubsection}
-        \begin{cvsubsection}{Summer Intern}{Goldman Sachs, Bengaluru}{May 2016 - July 2016}
+    \begin{cvsection}{Education}
+        \begin{cvsubsection}{Stony Brook University}{Stony Brook, NY}{Aug 2019 -- Dec 2020}
             \begin{itemize}
-                \item Built and deployed workbooks in Tableau to extract market risk insights, detect anomalies and report the numbers.
-                \item Extended the functionality to web based data sources.
+                \item {M.S  in Computer Science \hspace{32em} GPA: 3.70/4.0}
+                \item \textbf{Coursework:} Distributed Systems, Analysis of Algorithms, Databases, Machine Learning, Probability and Statistics for Data Scientists, Artificial Intelligence
+                \item \textbf{Graduate Teaching Assistant}: Statistical Methods for Data Science (Fall '20), Principles of Database Systems (Spring '20)
             \end{itemize}
         \end{cvsubsection}
-	\end{cvsection}
+        \begin{cvsubsection}{Birla Institute of Technology Mesra}{Ranchi, India}{Aug 2013 -- June 2017}
+            \begin{itemize}
+                \item {B.E in Information Technology  \hspace{30em}}
+                \item \textbf{Coursework:} Operating Systems, Data Structures, Algorithms, Data Mining, Databases, Optimization Techniques
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
 
-	\begin{cvsection}{Academic Projects}
-	    \begin{cvsubsection}{}{}{}
-		\begin{itemize}
-			\item \textbf{COVID-19 Dashboard for US | \textit{Visualisation, D3 and Flask}}: Built an interactive web-based dashboard using D3 and Flask by processing publicly available covid-19 datasets, performing statistical analysis and finally rendering effective visualisations using choropleth map, radar chart, time series line charts, etc. \chref{https://github.com/abhi-2110/cse564-project}{[Source Code]} (Apr'20)
-			\item \textbf{COVID-19 Mobility Trend Analysis | \textit{Statistical Modeling, Python}}: Developed Jupyter notebooks to extract crucial insights from mobility trends affected due to the pandemic in parts of Canada modeled on publicly available datasets comprising of confirmed and presumptive coronavirus cases. (May'20)
-		    \item  \textbf{Fault-tolerant Key/Value Service with Raft | \textit{Distributed Systems, Go}}: Implemented the raft (a replicated state machine protocol) consensus algorithm in Golang from scratch. Built a fault-tolerant key-value service on top of raft. (Nov'19)
-			\item \textbf{Inverted Index generation using MapReduce | \textit{Distributed Systems, Go}}: Implemented a distributed MapReduce in Golang (based on the original \chref{http://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf}{\textit{research paper}}) to generate inverted indices for document searching.
-			\chref{https://github.com/abhi-2110/MapReduce}{[Source Code]} (Sept'19)
-			\item \textbf{Deceptive Opinion Spam | \textit{NLP, Python}}: Implemented one of the models presented in the  \chref{https://www.aclweb.org/anthology/P11-1032.pdf}{\textit{research paper}} (Finding Deceptive Opinion Spam by Any Stretch of the Imagination) published in ACL. The model has been trained using SVMs as classifier and achieves an accuracy of 87.8\%. (Apr'20)
-		\end{itemize}
-		\end{cvsubsection}
-% 		\begin{cvsubsection}{Personal Projects}{}{}
-% 			\begin{itemize}
-% 				\item  \textbf{E-Store:} Developed a simplified online store application using the MEAN stack which utilized various RESTful APIs like Facebook for login and Stripe for credit card payments. It also supported multiple currencies via the Open Exchange Rates API.
-% 			\end{itemize}
-% 		\end{cvsubsection}
-	\end{cvsection}
+    \begin{cvsection}{Technical Skills}
+        \begin{cvsubsection}{}{}{}
+            \begin{itemize}
+                \item \textbf{Languages: } \{Java, Python \} (proficient), \{C, C++, Go, SQL, Bash\} (familiar)
+                \item \textbf{Technologies \& Frameworks: } Kubernetes, Docker, Git, GitHub, Spring, Maven, IntelliJ, Redis, Cadence, Apache Jmeter
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
 
-	\begin{cvsection}{Academic Experience and Activities}
-		\begin{cvsubsection}{}{}{}
-			\begin{itemize}
-				% \begin{itemize}
-    %                 \item Conducted weekly office hours to help answer questions and clarify concepts.
-    %                 \item Evaluated and graded assignments and exams throughout the semester.
-				% \end{itemize}
-				\item \textbf{Invited to participate in the Google foobar challenge}
-				\item \textbf{Achieved a spot in the top 10 teams out of 100+ teams part of CSE 564 for building an effective interactive dashboard}
-				\item \textbf{Graduate Aptitude Test in Engineering (GATE-2017)}
-			    \begin{itemize}
-			        \item Achieved a percentile of 99.3, an examination conducted jointly by IISc and IITs across India.
-			    \end{itemize}
-			    \item \textbf{Solved over 450 algorithmic problems on online judges}
-			    \begin{itemize}
-			        \item SPOJ(id: \textit{abhi\_2110}), leetcode(id: \textit{abhi\_2110})
-			    \end{itemize}
-			\end{itemize}
-		\end{cvsubsection}
-	\end{cvsection}
+    \begin{cvsection}{Work Experience}
+        \begin{cvsubsection}{Senior Software Engineer}{Cloudera, Santa Clara}{Feb 2024 - Present}
+            \begin{itemize}
+                \item Led the release activities for Apache Ranger 2.6 release.
+                \item Co-led development efforts to revamp Apache Ranger codebase to conform to check-style changes \chref{https://issues.apache.org/jira/browse/RANGER-5017}{RANGER-5017}.
+                \item Developed a new internal distributed performance testing framework leveraging Apache Jmeter to measure performance bottlenecks in an external authorizer used within Apache Hadoop.
+            \end{itemize}
+        \end{cvsubsection}
+        \begin{cvsubsection}{Software Engineer II}{Cloudera, Santa Clara}{Feb 2021 - Jan 2024}
+            \begin{itemize}
+                \item %\includegraphics[scale=0.25]{ranger-logo.png}
+                \chref{https://github.com/apache/ranger}{\textbf{Apache Ranger}} Committer : Landed 100+ commits in areas including docker development, feature development for ranger usersync service and various bug fixes across the product.
+                \item Lead developer for the ranger usersync service, driving feature development and actively addressing customer escalations(resolved 30+ relevant tickets in the last 2 years).
+                \item Led docker-based development initiatives within the product in an effort to support all plugin services and reduce feature-related developer testing time.
+            \end{itemize}
+        \end{cvsubsection}
+
+        \begin{cvsubsection}{Software Engineer}{Goldman Sachs, Bengaluru}{June 2017 - July 2019}
+            \begin{itemize}
+                \item Optimized performance of a critical component in a legacy distributed system \chref{https://www.google.com/patents/US20130275612}{Gigabus}, increasing its throughput by 36\%.
+                \item Developed materialized views for read queries on Sybase IQ, the slowest performing views went from 25 mins to 5 mins.
+                \item Migrated internal proprietary code base onto v16 Sybase IQ clusters which resulted in a 15\% gain on read SQL queries.
+                % \item Built an archival and restoration store leveraging Amazon S3.
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
+
+    \begin{cvsection}{Internship}
+        \begin{cvsubsection}{Software Engineering Intern}{Cloudera, Santa Clara}{June 2020 – Aug 2020}
+            %iChat AV
+            \begin{itemize}
+                \item Built client libraries for the open source project Apache Ranger in Java and Python for RESTful web services enabling applications to manage ranger policies.\chref{https://github.com/apache/ranger/tree/master/intg}{[Source Code]}
+            \end{itemize}
+        \end{cvsubsection}
+
+        \begin{cvsubsection}{Summer Intern}{Goldman Sachs, Bengaluru}{May 2016 - July 2016}
+            \begin{itemize}
+                \item Built and deployed workbooks in Tableau to query Sybase IQ and gain insights into the data. Extended the functionality to web based data sources.
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
+
+
+    \begin{cvsection}{Academic Projects}{}
+        \begin{cvsubsection}{}{}{}
+            \begin{itemize}
+                \item  \textbf{Fault-tolerant Key/Value Service with Raft | \textit{Distributed Systems, Go}}: Implemented the \chref{https://raft.github.io/raft.pdf}{raft} (a replicated state machine protocol) consensus algorithm in Golang from scratch. Built a fault-tolerant key-value service on top of raft. (Nov'19)
+                \item \textbf{Inverted Index generation using MapReduce | \textit{Distributed Systems, Go}}: Implemented a distributed MapReduce in Golang (based on the original \chref{http://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf}{\textit{research paper}}) to generate inverted indices for document searching.
+                \chref{https://github.com/kumaab/MapReduce}{[Source Code]} (Sept'19)
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
+
+    \begin{cvsection}{Academic Experience and Activities}
+        \begin{cvsubsection}{}{}{}
+            \begin{itemize}
+                \item \textbf{Graduate Aptitude Test in Engineering - Computer Science (GATE-2017)}
+                \begin{itemize}
+                    \item Achieved a percentile of 99.3, an examination conducted jointly by IISc and IITs across India.
+                \end{itemize}
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
 \end{document}

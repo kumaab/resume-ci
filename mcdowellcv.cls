@@ -42,10 +42,7 @@
 \usepackage{fontspec}
 % \setmainfont[SmallCapsFeatures={Renderer=Basic},
 % Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
-\setmainfont[SmallCapsFeatures={Renderer=Basic},
-Ligatures={TeX, NoCommon, NoDiscretionary}, BoldItalicFont=CALIBRIZ.TTF,
-    BoldFont      =CALIBRIB.TTF,
-    ItalicFont    =CALIBRII.TTF]{CALIBRI.TTF}
+\setmainfont{Carlito}
 
 % Remove paragraph indentation
 \usepackage[parfill]{parskip} 
