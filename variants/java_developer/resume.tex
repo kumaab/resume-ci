@@ -21,7 +21,7 @@
 %% SOFTWARE.
 
 % The font could be set to Windows-specific Calibri by using the 'calibri' option
-\documentclass[]{mcdowellcv}
+\documentclass[]{cls/mcdowellcv}
 
 \usepackage{graphicx}
 % For mathematical symbols
@@ -34,13 +34,11 @@
 \hypersetup{final}
 
 \newcommand{\printinfo}[2]{\mbox{\textcolor{accent}{\normalfont #1}\hspace{0.5em}#2\hspace{2em}}}
-
 \newcommand{\emailsymbol}{\faAt}
 \newcommand{\phonesymbol}{\faPhone}
 \newcommand{\mailsymbol}{\faEnvelope}
 \newcommand{\linkedinsymbol}{\faLinkedin}
 \newcommand{\githubsymbol}{\faGithub}
-
 \newcommand{\email}[1]{\printinfo{\emailsymbol}{#1}}
 \newcommand{\phone}[1]{\printinfo{\phonesymbol}{#1}}
 \newcommand{\mailaddress}[1]{\printinfo{\mailsymbol}{#1}}
@@ -49,15 +47,7 @@
 \newcommand\chref[3][accent]{\href{#2}{\small\color{#1}#3}}
 
 
-% Set applicant's personal data for header
-\name{Abhishek Kumar}
-\contacts{\email{\href{mailto:abhi@apache.org}{abhi@apache.org}}}
-\gitlink{\github{\href{https://github.com/kumaab}{github.com/kumaab}}}
-\address{\phone{+1-434-995-9140}
-%\mailaddress{615 Oakfield Lane, Philadelphia, PA-19115}
-}
-\webpage{\linkedin{\href{https://www.linkedin.com/in/kumar21}{linkedin.com/in/kumar21}}}
-%\webpage{linkedin.com/in/kumar21}
+\input{common/header}
 
 \begin{document}
 
@@ -85,7 +75,7 @@
     \begin{cvsection}{Technical Skills}
         \begin{cvsubsection}{}{}{}
             \begin{itemize}
-                \item \textbf{Languages: } \{Java, Python \} (proficient), \{C, C++, Go, SQL, Bash\} (familiar)
+                \item \textbf{Languages: } \{Java, Python\} (proficient), \{C, C++, Go, SQL, Bash\} (familiar)
                 \item \textbf{Technologies \& Frameworks: } Kubernetes, Docker, Git, GitHub, Spring, Maven, IntelliJ, Redis, Cadence, Apache Jmeter
             \end{itemize}
         \end{cvsubsection}
