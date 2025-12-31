@@ -29,13 +29,13 @@
   \vspace{1em}
 }
 
-\newcommand{\section}[1]{
+\renewcommand{\section}[1]{
   \vspace{1em}
   {\large \textbf{#1}}\\
   \hrule
 }
 
-\newcommand{\subsection}[1]{
+\renewcommand{\subsection}[1]{
   \vspace{0.5em}
   \textbf{#1}
 }
