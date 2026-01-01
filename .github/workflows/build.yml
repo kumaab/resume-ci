@@ -58,4 +58,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resume-${{ steps.tag.outputs.variant }}-${{ steps.tag.outputs.date }}-${{ steps.tag.outputs.revision }}
-          path: resume-*.pdf
+          path: resume.pdf
