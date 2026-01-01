@@ -11,6 +11,8 @@ Local builds are not supported currently.
 export version=swe-20251231-v7
 
 git tag ${version} && git push origin ${version}
+
+# git push triggers a build to generate the resume
 ```
 
 ## Output
