@@ -54,8 +54,20 @@ jobs:
             resume-builder \
             xelatex -interaction=nonstopmode variants/developer/resume.tex
 
-      - name: Upload PDF
+      - name: Rename output PDF
+        run: |
+          VARIANT=${{ steps.tag.outputs.variant }}
+          DATE=${{ steps.tag.outputs.date }}
+          REV=${{ steps.tag.outputs.revision }}
+
+          FINAL_NAME="resume-${VARIANT}-${DATE}-${REV}.pdf"
+          mv resume.pdf "$FINAL_NAME"
+
+          echo "final_pdf=$FINAL_NAME" >> $GITHUB_OUTPUT
+
+      - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: resume-${{ steps.tag.outputs.variant }}-${{ steps.tag.outputs.date }}-${{ steps.tag.outputs.revision }}
-          path: resume.pdf
+          path: resume-${{ steps.tag.outputs.variant }}-${{ steps.tag.outputs.date }}-${{ steps.tag.outputs.revision }}.pdf
+
