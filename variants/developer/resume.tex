@@ -30,37 +30,18 @@
     % Print the header
     \makeheader
     % Print the content
-
-    \begin{cvsection}{Education}
-        \begin{cvsubsection}{Stony Brook University}{Stony Brook, NY}{Aug 2019 -- Dec 2020}
-            \begin{itemize}
-                \item {M.S  in Computer Science \hspace{32em} GPA: 3.70/4.0}
-                \item \textbf{Coursework:} Distributed Systems, Analysis of Algorithms, Databases, Machine Learning, Probability and Statistics for Data Scientists, Artificial Intelligence
-            \end{itemize}
-        \end{cvsubsection}
-        \begin{cvsubsection}{Birla Institute of Technology Mesra}{Ranchi, India}{Aug 2013 -- June 2017}
-            \begin{itemize}
-                \item {B.E in Information Technology  \hspace{30em}}
-                \item \textbf{Coursework:} Operating Systems, Data Structures, Algorithms, Data Mining, Databases, Optimization Techniques
-            \end{itemize}
-        \end{cvsubsection}
-    \end{cvsection}
-
-    \begin{cvsection}{Technical Skills}
-        \begin{cvsubsection}{}{}{}
-            \begin{itemize}
-                \item \textbf{Languages: } \{Java, Python\} (proficient), \{C, C++, Go, SQL, Bash\} (familiar)
-                \item \textbf{Technologies \& Frameworks: } Kubernetes, Docker, Git, GitHub, Spring, Maven, IntelliJ, Redis, Cadence, Apache Jmeter
-            \end{itemize}
-        \end{cvsubsection}
-    \end{cvsection}
-
     \begin{cvsection}{Work Experience}
         \begin{cvsubsection}{Senior Software Engineer}{Cloudera, Santa Clara}{Feb 2024 - Present}
             \begin{itemize}
-                \item Led end-to-end release activities for Apache Ranger 2.7 and 2.8 as release manager, coordinating across contributors and ensuring production readiness.
+                \item Co-led cross-team initiatives to implement cloud-native fine-grained authorization (Ranger RAZ) for Cloudera AI Inference service.
+                \item Developed a distributed performance testing framework using Apache JMeter to identify performance bottlenecks in custom internal authorizers.
                 \item Co-led development efforts to revamp Apache Ranger codebase to conform to check-style changes \chref{https://issues.apache.org/jira/browse/RANGER-5017}{RANGER-5017}.
-                \item Developed a new internal distributed performance testing framework leveraging Apache Jmeter to measure performance bottlenecks in an external authorizer used within Apache Hadoop.
+            \end{itemize}
+        \end{cvsubsection}
+        \begin{cvsubsection}{Apache Ranger PMC Member & Committer}{Apache Software Foundation}{Feb 2023 - Present}
+            \begin{itemize}
+                \item Led end-to-end release activities for Apache Ranger 2.6.0 and 2.7.0 as release manager, coordinating 200+ contributions while ensuring production readiness.
+                \item Presented a talk on \'Unifying Access Control with Governed Data Sharing in Apache Ranger\' at Apache's official conference Community Over Code North America, held in Minneapolis, Minnesota in Sept' 2025.
             \end{itemize}
         \end{cvsubsection}
         \begin{cvsubsection}{Software Engineer II}{Cloudera, Santa Clara}{Feb 2021 - Jan 2024}
@@ -92,24 +73,29 @@
         \end{cvsubsection}
     \end{cvsection}
 
-
-    \begin{cvsection}{Academic Projects}{}
-        \begin{cvsubsection}{}{}{}
+    \begin{cvsection}{Education}
+        \begin{cvsubsection}{Stony Brook University}{Stony Brook, NY}{Aug 2019 -- Dec 2020}
             \begin{itemize}
-                \item  \textbf{Fault-tolerant Key/Value Service with Raft | \textit{Distributed Systems, Go}}: Implemented the \chref{https://raft.github.io/raft.pdf}{raft} (a replicated state machine protocol) consensus algorithm in Golang from scratch. Built a fault-tolerant key-value service on top of raft. (Nov'19)
-                \item \textbf{Inverted Index generation using MapReduce | \textit{Distributed Systems, Go}}: Implemented a distributed MapReduce in Golang (based on the original \chref{http://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf}{\textit{research paper}}) to generate inverted indices for document searching.
-                \chref{https://github.com/kumaab/MapReduce}{[Source Code]} (Sept 2019)
+                \item {M.S  in Computer Science \hspace{32em} GPA: 3.7/4.0}
+                \item \textbf{Coursework:} Distributed Systems, Analysis of Algorithms, Artificial Intelligence, Machine Learning, Probability and Statistics for Data Scientists, Databases
             \end{itemize}
         \end{cvsubsection}
     \end{cvsection}
 
-    \begin{cvsection}{Academic Experience and Activities}
+    \begin{cvsection}{Technical Skills}
         \begin{cvsubsection}{}{}{}
             \begin{itemize}
-                \item \textbf{Graduate Aptitude Test in Engineering - Computer Science (GATE-2017)}
-                \begin{itemize}
-                    \item Achieved a percentile of 99.3, an examination conducted jointly by IISc and IITs across India.
-                \end{itemize}
+                \item \textbf{Languages: } \{Java, Python\} (proficient), \{C, C++, Go, SQL, Bash\} (familiar)
+                \item \textbf{Technologies \& Frameworks: } Kubernetes, Docker, Git, GitHub, Spring, Maven, IntelliJ, Redis, Cadence, Apache Ozone, Apache Atlas, Apache Jmeter
+            \end{itemize}
+        \end{cvsubsection}
+    \end{cvsection}
+
+    \begin{cvsection}{Academic Projects}{}
+        \begin{cvsubsection}{}{}{}
+            \begin{itemize}
+                \item  \textbf{Fault-tolerant Key/Value Service with Raft | \textit{Distributed Systems, Golang}}: Implemented the \chref{https://raft.github.io/raft.pdf}{RAFT} (a replicated state machine protocol) consensus algorithm in Golang from scratch.
+                Built a fault-tolerant key-value service on top of RAFT. 2019
             \end{itemize}
         \end{cvsubsection}
     \end{cvsection}
